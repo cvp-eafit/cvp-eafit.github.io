@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CVP EAFIT — Centro de Valor Público</title>
+  <meta name="description" content="Centro de Valor Público, Universidad EAFIT. Investigación aplicada y consultoría para el sector público en Colombia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:  #003DA5;
+      --green: #00A859;
+      --dark:  #0d1b3e;
+      --gray:  #f4f6fb;
+      --text:  #1a1a2e;
+      --muted: #6b7280;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #fff;
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--blue);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img { height: 36px; }
+    header nav a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-left: 1.5rem;
+      transition: color 0.2s;
+    }
+    header nav a:hover { color: #fff; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, var(--blue) 0%, #001f6b 100%);
+      color: #fff;
+      padding: 3.5rem 2rem 3rem;
+      text-align: center;
+    }
+    .hero p.eyebrow {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.7;
+      margin-bottom: 0.75rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.25;
+      max-width: 640px;
+      margin: 0 auto 0.75rem;
+    }
+    .hero h1 span { color: #5de0a0; }
+    .hero p.sub {
+      font-size: 1rem;
+      opacity: 0.82;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* ── Projects section ── */
+    main {
+      flex: 1;
+      padding: 3rem 2rem 4rem;
+      background: var(--gray);
+    }
+    .section-label {
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.05);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      transform: translateY(-3px);
+    }
+    .card-stripe { height: 4px; }
+    .card-body { padding: 1.4rem 1.5rem; flex: 1; }
+    .card-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+    .card-body h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 0.6rem;
+      color: var(--text);
+    }
+    .card-body p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .card-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid #f0f0f0;
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.85; text-decoration: none; }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-outline {
+      border: 1.5px solid #d0d5dd;
+      color: var(--muted);
+      background: transparent;
+    }
+
+    /* Coming-soon card */
+    .card.coming { opacity: 0.55; pointer-events: none; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.55);
+      font-size: 0.82rem;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 600px) {
+      header nav { display: none; }
+      .cards { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="assets/logo-cvp.png" alt="Centro de Valor Público EAFIT" />
+    <nav>
+      <a href="https://github.com/cvp-eafit" target="_blank">GitHub</a>
+      <a href="https://www.eafit.edu.co/centros-estudio-incidencia/valor-publico" target="_blank">EAFIT</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <p class="eyebrow">Centro de Valor Público · Universidad EAFIT</p>
+    <h1>Investigación aplicada para el <span>sector público</span></h1>
+    <p class="sub">Proyectos de consultoría e investigación que combinan evidencia académica con impacto en política pública.</p>
+  </div>
+
+  <main>
+    <p class="section-label">Proyectos activos</p>
+    <div class="cards">
+
+      <!-- Provincias -->
+      <div class="card">
+        <div class="card-stripe" style="background: linear-gradient(90deg, #003DA5, #00A859);"></div>
+        <div class="card-body">
+          <p class="card-tag" style="color: #003DA5;">Gobierno Territorial · Antioquia</p>
+          <h2>Fortalecimiento de Esquemas Asociativos Territoriales</h2>
+          <p>Consultoría con la Gobernación de Antioquia para fortalecer las Provincias Administrativas y de Planificación (PAP): planes estratégicos, habilitadores y sistematización.</p>
+        </div>
+        <div class="card-footer">
+          <a class="btn btn-primary" href="https://cvp-eafit.github.io/provincias" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Ver sitio
+          </a>
+          <a class="btn btn-outline" href="https://github.com/cvp-eafit/provincias" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            Repositorio
+          </a>
+        </div>
+      </div>
+
+      <!-- Placeholder -->
+      <div class="card coming">
+        <div class="card-stripe" style="background: #e0e0e0;"></div>
+        <div class="card-body">
+          <p class="card-tag" style="color: #aaa;">Próximamente</p>
+          <h2 style="color: #bbb;">Nuevo proyecto</h2>
+          <p>Próximamente publicaremos los resultados de nuevas investigaciones y consultorías.</p>
+        </div>
+        <div class="card-footer">
+          <span class="btn btn-outline" style="cursor: default;">En preparación</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <span>© 2026 <a href="https://www.eafit.edu.co/centros-estudio-incidencia/valor-publico" target="_blank">Centro de Valor Público</a> · Universidad EAFIT</span>
+    <span>Santiago Leyva Botero &amp; <a href="https://www.jcmunozmora.co" target="_blank">Juan Carlos Muñoz-Mora</a></span>
+  </footer>
+
+</body>
+</html>
