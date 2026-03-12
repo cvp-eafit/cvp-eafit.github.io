@@ -1,0 +1,48 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "CVP EAFIT"
+  site-url: https://cvp-eafit.github.io
+  description: "Centro de Valor Público — Universidad EAFIT. Investigación aplicada y consultoría para el fortalecimiento del sector público en Colombia."
+  favicon: assets/favicon.ico
+
+  navbar:
+    background: "#003DA5"
+    foreground: white
+    logo: assets/logo-cvp.png
+    logo-alt: "Centro de Valor Público - Universidad EAFIT"
+    collapse-below: lg
+    right:
+      - icon: github
+        href: https://github.com/cvp-eafit
+        aria-label: GitHub
+
+  page-footer:
+    background: "#1a1a2e"
+    foreground: "#cccccc"
+    left: |
+      © 2026 [Centro de Valor Público](https://www.eafit.edu.co/centros-estudio-incidencia/valor-publico) — Universidad EAFIT
+    right:
+      - icon: envelope
+        href: mailto:jcmunozm@eafit.edu.co
+      - icon: globe
+        href: https://www.jcmunozmora.co
+        aria-label: Sitio web
+
+  open-graph: true
+  twitter-card: true
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false
+    echo: false
+    code-fold: false
+    link-external-icon: false
+    link-external-newwindow: true
+    smooth-scroll: true
+
+lang: es
